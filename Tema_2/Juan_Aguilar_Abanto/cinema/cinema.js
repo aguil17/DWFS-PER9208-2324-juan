@@ -29,36 +29,37 @@ console.log(butacas);
 
 function suggest(butacas, asientos) {
     let asientoSugeridos = [];
+    let sugeridosTemp = [];
 
-    
     if (asientos > N) {
         return asientoSugeridos;
     }
 
     for (let i = 0; i < N; i++) {
         for (let j = 0; j <= N - asientos; j++) {
-            let disponible = true;
             let sugerido = [];
 
+            let todosDisponibles = true;
             for (let k = 0; k < asientos; k++) {
                 if (butacas[i][j + k].estado) {
-                    disponible = false;
-                    sugerido = [];
-                    k = asientos;
-                } else {
-                    sugerido.push(butacas[i][j + k].id);
+                    todosDisponibles = false;
                 }
+                sugerido.push(butacas[i][j + k].id);
             }
 
-            if (disponible && sugerido.length === asientos) {
-                asientoSugeridos = sugerido.slice();
-                return asientoSugeridos;
+            if (todosDisponibles) {
+                sugeridosTemp.push(sugerido.slice());
             }
         }
     }
 
+    if (sugeridosTemp.length > 0) {
+        asientoSugeridos = sugeridosTemp[0];
+    }
+
     return asientoSugeridos;
 }
+
 
 
 //Si el número de asientos solicitados excede el tamaño máximo de la fila, la función debe devolver un set vacío.

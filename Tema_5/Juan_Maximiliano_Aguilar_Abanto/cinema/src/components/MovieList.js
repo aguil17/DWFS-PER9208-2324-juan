@@ -3,6 +3,7 @@ import {Movie}  from "./Movie";
 
 export const MovieList = () =>
 {
+    //No usado porque se hace llamadas por fetch
     const peliculas = [
         {
             titulo: "The Matrix",

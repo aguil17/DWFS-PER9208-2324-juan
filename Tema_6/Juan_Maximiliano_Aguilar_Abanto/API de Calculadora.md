@@ -9,9 +9,15 @@
 
 | Método HTTP                            | URI                   | Query Params  | Cuerpo de la Petición                                              | Cuerpo de la Respuesta                                                                | Códigos de Respuesta                                    |
 |----------------------------------------|-----------------------|---------------|--------------------------------------------------------------------|---------------------------------------------------------------------------------------|---------------------------------------------------------|
-| POST                                   | /calculators/sumar    | N/A           | `[2,2,2]`                                                             | `4`           | 200 OK<br/>400 Bad Request<br/>500 Internal Server Error   |
-| POST                                   | /loans                | N/A           | `{"userId": 123, "bookId": 789, "dueDate": "2023-08-01"}`          | `{"loanId": 321, "userId": 123, "bookId": 789, "dueDate": "2023-08-01"}`              | 201 Created<br/>400 Bad Request<br/>500 Internal Server Error |
-| DELETE (podría haber sido PUT o PATCH) | /loans/{loanId}       | N/A           | N/A                                                                | `{"message": "Loan returned"}`                                                        | 200 OK<br/>404 Not Found<br/>500 Internal Server Error      |
-| GET                                    | /users/{userId}/loans | N/A           | N/A                                                                | `{"loans": [{"loanId": 321, "bookId": 789, "dueDate": "2023-08-01"}]}`                | 200 OK<br/>404 Not Found<br/>500 Internal Server Error      |
-| PATCH                                  | /books/{bookId}       | N/A           | `{"title": "Advanced REST", "author": "Jane Smith", "year": 2023}` | `{"bookId": 789, "title": "Advanced REST", "author": "Jane Smith", "year": 2023}`     | 200 OK<br/>400 Bad Request<br/>404 Not Found<br/>500 Internal Server Error |
-| POST                                   | /users/{userId}/reports/     | N/A           | N/A                                                                | `{"userId": 123, "loans": [{"loanId": 321, "bookId": 789, "dueDate": "2023-08-01"}]}` | 202 Accepted<br/>404 Not Found<br/>500 Internal Server Error    |
+| POST                                   | /calculators/add    | N/A           | `{"numbers":[2,2,2]}`                                                             | `{"operationId": "1","total": 6}`           | 201 Created<br/>400 Bad Request<br/>500 Internal Server Error   |
+| POST                                   | /calculators/substract                | N/A           | `{"numbers":[2,2,2]}`          | 
+`{"operationId": 1,"total": -2}`              | 201 Created<br/>400 Bad Request<br/>500 Internal Server Error |
+| POST                                   | /calculators/multiply    | N/A           | `{"number1": 2,"number2": 2}`                                                             | `{"operationId": 1,"total": 4}`           | 201 Created<br/>400 Bad Request<br/>500 Internal Server Error   |
+| POST                                   | /calculators/divide                 | N/A           | `{"number1": 2,"number2": 2}`          | 
+`{"operationId": 1,"total": 1}`              | 201 Created<br/>400 Bad Request<br/>500 Internal Server Error |
+| POST                                   | /calculators/squareroot                  | N/A           | `{"number": 4,"root": 2}`          | 
+`{"operationId": 1,"total": 2}`              | 201 Created<br/>400 Bad Request<br/>500 Internal Server Error |
+| POST                                   | /calculators/power                  | N/A           | `{"numero":2, "power":3}`          | 
+`{"operationId": 1, "total": 8}`              | 201 Created<br/>400 Bad Request<br/>500 Internal Server Error |
+| GET                                   | /calculators/{operationaId}/detail                  | N/A           | N/A        | 
+`{"operationId": 1,"operationtype": "add","body": {"numbers":[2,2,2]} ,"total": 8}`              | 201 Created<br/>400 Bad Request<br/>500 Internal Server Error |

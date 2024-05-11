@@ -10,7 +10,7 @@
 - Reserva (reservations): Representa un Reserva
 - Pago (payments): Pago de una reserva.
 
-| Método HTTP | URI                             | Query Params  | Cuerpo de la Petición                    | Cuerpo de la Respuesta                                               | Códigos de Respuesta                                    |
+| Método HTTP | URI                             | Query Params  | Cuerpo de la Petición       | Cuerpo de la Respuesta                                               | Códigos de Respuesta                                    |
 |-------------|---------------------------------|---------------|------------------------------------------|-----------------------------------------------------------------------|---------------------------------------------------------|
 | POST        | /api/v1/films                | N/A           | `{"name": "Matrix","country": "USA","language": "English"` | `{"id": 1,"name": "Matrix","country": "USA","language": "English"}`                                    | 201 Created<br/>400 Bad Request<br/>500 Internal Server Error |
 | DELETE        | /api/v1/films/{filmId}                | N/A           | N/A                  | `{"id": 1,"name": "Matrix","country": "USA","language": "English"}`                                    | 200 Ok<br/>400 Bad Request<br/>500 Internal Server Error |

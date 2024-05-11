@@ -23,47 +23,45 @@
 
 **Atributos de los recursos**:
 
-- Partida
-    Id : Un identificador único para la partida.
-    Jugadores: Una lista de jugadores que participan en la partida.
-    Estado: El estado actual de la partida (por ejemplo, en curso, finalizada, etc.).
-    Tablero: El tablero de juego.
+- **Partida**
+  - Id: Un identificador único para la partida.
+  - Jugadores: Una lista de jugadores que participan en la partida.
+  - Estado: El estado actual de la partida (por ejemplo, en curso, finalizada, etc.).
+  - Tablero: El tablero de juego.
 
-- Tablero 
-     Id : Un identificador único para tablero.
-     Dimensiones (Dimensions): El tamaño del tablero, representado por el número de filas y columnas.
-
-
-- Jugador
-
-    Id : Un identificador único de un jugador.
-    Nombre: El nombre del jugador.
-    Flota: La flota de barcos que el jugador tiene en la partida.
-    Puntuación: La puntuación acumulada del jugador en la partida.
+- **Tablero** 
+  - Id : Un identificador único para tablero.
+  - Dimensiones (Dimensions): El tamaño del tablero, representado por el número de filas y columnas.
 
 
-- Barco:
-   
-    Id : Un identificador único de un barco.
-    Tipo: El tipo de barco (por ejemplo, portaaviones, acorazado, submarino, etc.).
-    Posición: La posición en el tablero donde se encuentra el barco.
-    Orientación: La orientación del barco en el tablero (horizontal o vertical).
-    Estado: Indica si el barco está intacto, tocado o hundido.
+- **Jugador**
+  - Id : Un identificador único de un jugador.
+  - Nombre: El nombre del jugador.
+  - Flota: La flota de barcos que el jugador tiene en la partida.
+  - Puntuación: La puntuación acumulada del jugador en la partida.
 
-- Flota:
-    Id : Un identificador único de flota.
-    Barcos: Una lista de barcos que componen la flota.
-    Estado: Indica el estado general de la flota ("Ejemplo: devastada, activa").
-    Número de Barcos: La cantidad total de barcos en la flota.
 
-- Disparo:
+- **Barco**
+  - Id : Un identificador único de un barco.
+  - Tipo: El tipo de barco (por ejemplo, portaaviones, acorazado, submarino, etc.).
+  - Posición: La posición en el tablero donde se encuentra el barco.
+  - Orientación: La orientación del barco en el tablero (horizontal o vertical).
+  - Estado: Indica si el barco está intacto, tocado o hundido.
 
-    Id : Un identificador único de disparo.
-    Coordenadas: Las coordenadas en el tablero donde se realizó el disparo.
-    Resultado: El resultado del disparo (por ejemplo, tocado, hundido, agua).
-    JugadorAtacante: El jugador que realizó el disparo.
-    JugadorVictima: El jugador que recibe el disparo.
-    Hora: La hora en la que se realizó el disparo.
+- **Flota**
+  - Id : Un identificador único de flota.
+  - Barcos: Una lista de barcos que componen la flota.
+  - Estado: Indica el estado general de la flota ("Ejemplo: devastada, activa").
+  - Número de Barcos: La cantidad total de barcos en la flota.
+
+- **Disparo**
+
+  - Id : Un identificador único de disparo.
+  - Coordenadas: Las coordenadas en el tablero donde se realizó el disparo.
+  - Resultado: El resultado del disparo (por ejemplo, tocado, hundido, agua).
+  - JugadorAtacante: El jugador que realizó el disparo.
+  - JugadorVictima: El jugador que recibe el disparo.
+  - Hora: La hora en la que se realizó el disparo.
 
 
 

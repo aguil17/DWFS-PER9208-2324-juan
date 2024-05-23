@@ -47,6 +47,7 @@
   - Posición: La posición en el tablero donde se encuentra el barco.
   - Orientación: La orientación del barco en el tablero (horizontal o vertical).
   - Estado: Indica si el barco está intacto, tocado o hundido.
+  - Jugador: Jugardor al que esta relacionado
 
 - **Flota**
   - Id : Un identificador único de flota.
@@ -62,6 +63,7 @@
   - JugadorAtacante: El jugador que realizó el disparo.
   - JugadorVictima: El jugador que recibe el disparo.
   - Hora: La hora en la que se realizó el disparo.
+  - Partida: Partida asociada
 
 
 
@@ -75,7 +77,7 @@
 | POST        | /api/v1/ships                | N/A           | `{"partida": 1, "jugador": 1,"flota": 2, "posicion": "A7,A8,A9,A10"}`                   | `{"barcoId": 1,"partida": 1, "jugador": 1, "flota": 2, "posicion": "A7,A8,A9,A10"}`                                    | 201 OK<br/>404 Not Found<br/>500 Internal Server Error |
 | DELETE      | /api/v1/ships/{shipId}                | N/A           | N/A                   | `{"barcoId": 1,"jugador": 1,"partida": 1, "flota": 2, "posicion": "A7,A8,A9,A10"}`                                    | 200 OK<br/>404 Not Found<br/>500 Internal Server Error |
 | GET        | /api/v1/players/{playerId}/ships                | N/A           | N/A                    | `{"barcos": [1,2,3]}`                                    | 200 OK<br/>404 Not Found<br/>500 Internal Server Error |
-| POST        | /api/v1/shots                | N/A           | `{"coordenadas": "A1", "resultado": "tocado","jugadorAtacante": 1, "jugadorVictima" : 2, "hora": "10:10:20"}`                    | `{"id": 1,"coordenadas": "A1", "resultado": "tocado","jugadorAtacante": 1, "jugadorVictima": 2, "hora": "10:10:20"}`                                    | 201 Created<br/>400 Bad Request<br/>500 Internal Server Error |
+| POST        | /api/v1/shots                | N/A           | `{ "gameId": 1,"coordenadas": "A1", "resultado": "tocado","jugadorAtacante": 1, "jugadorVictima" : 2, "hora": "10:10:20"}`                    | `{"id": 1,"gameId": 1,"coordenadas": "A1", "resultado": "tocado","jugadorAtacante": 1, "jugadorVictima": 2, "hora": "10:10:20"}`                                    | 201 Created<br/>400 Bad Request<br/>500 Internal Server Error |
 | POST        | /api/v1/players                | N/A           | `{"nombre": "Peter", "flota": 1}`                    | `{"id": 1, "nombre": "Peter","flota": 1, "Puntuacion": 0}`                                    | 201 Created<br/>400 Bad Request<br/>500 Internal Server Error |
 | GET        | /api/v1/players/{playerId}                | N/A           | N/A                    | `{"id": 1, "nombre": "Peter","flota": 1, "Puntuacion": 0}`                                    | 200 OK<br/>404 Not Found<br/>500 Internal Server Error |
 | DELETE        | /api/v1/players/{playerId}                | N/A           | N/A                    | `{"id": 1, "nombre": "Peter","flota": 1, "Puntuacion": 0}`                                    | 200 OK<br/>404 Not Found<br/>500 Internal Server Error |

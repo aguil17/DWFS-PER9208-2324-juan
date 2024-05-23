@@ -9,7 +9,7 @@
 - Multiplicación (multiplicaciones) Permite realizar la operacion de multiplicación
 - División (divisiones) Permite realizar la operación de división
 - Radicación (radicaciones) Permite realizar la operacion de radicación de dos números
-- Potenciación (potenciaciones) Permite realizar la potenciación de dos numeros
+- Potenciación (potenciaciones) Permite realizar la potenciación de dos números
 
 
 | Método HTTP | URI                             | Query Params  | Cuerpo de la Petición                    | Cuerpo de la Respuesta                                               | Códigos de Respuesta                                    |

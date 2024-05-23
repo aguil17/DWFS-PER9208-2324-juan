@@ -48,6 +48,7 @@
   - Orientación: La orientación del barco en el tablero (horizontal o vertical).
   - Estado: Indica si el barco está intacto, tocado o hundido.
   - Jugador: Jugardor al que esta relacionado
+  - Partida: Partida asociada
 
 - **Flota**
   - Id : Un identificador único de flota.
